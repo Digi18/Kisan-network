@@ -6,7 +6,7 @@ const MongoClient = require('mongodb').MongoClient;
 
 const dburl = process.env.URL;
 
-router.get('/',(req,res) => {
+router.get('/getContacts',(req,res) => {
 
      MongoClient.connect(dburl,{useNewUrlParser:true,useUnifiedTopology:true},(err,client) => {
 

@@ -21,14 +21,15 @@ router.post('/sendSms',(req,res) => {
         const now = new Date();
         const time = date.format(now, 'DD MMM. HH:mm'); 
         const from = 'Nexmo';
-        const to = '919664277803';
+     //   const to = '919664277803';
         const text = req.body.message;
         const firstname = req.body.firstname;
         const lastname = req.body.lastname;
+        const mobile = req.body.mobile;
         const image = 'null';
 
         
-        nexmo.message.sendSms(from,to,text,(err,responseData) => {
+        nexmo.message.sendSms(from,mobile,text,(err,responseData) => {
 
                         if(err){
                         	console.log("My Error",err);
